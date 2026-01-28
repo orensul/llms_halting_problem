@@ -410,10 +410,10 @@ for reasoning about undecidable problems.
   <b>Termination prediction task.</b><br>
   Given a program, the task is to predict whether the program halts for all inputs
   (instantiations of nondeterministic variables).<br>
-  <b>(1)</b>
+  (1)
   Traditional verification tools such as <span style="font-variant: small-caps;">PROTON</span>
   rely on multi-component architectures for parsing, input augmentation, and tool-chain management
-  <b>(2)</b>
+  (2)
   We investigate whether large language models (LLMs) can match state-of-the-art verification tools,
   offering a simpler, language-agnostic solution, as illustrated in the example above where the LLM
   correctly predicts termination.
@@ -429,7 +429,6 @@ for reasoning about undecidable problems.
 
 
 
-<!-- Image Section for "Our Task" -->
 <section class="hero is-light">
   <div class="hero-body">
     <div class="container is-max-desktop"
@@ -442,7 +441,7 @@ for reasoning about undecidable problems.
       <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
         <b>LLM non-termination witness prediction.</b><br>
         Given a <i>C</i> program, an LLM that predicts <i>nontermination</i> must additionally output
-        a <b>witness automaton</b> as a proof in JSON format (see Figure&nbsp;8 in the Appendix).
+        a witness automaton as a proof in JSON format (see Figure&nbsp;8 in the Appendix).
         The witness automaton models a potentially infinite execution:
         nodes correspond to program states, and edges correspond to transitions.<br>
 
@@ -459,6 +458,40 @@ for reasoning about undecidable problems.
     </div>
   </div>
 </section>
+
+
+
+
+<section class="image-section" style="margin-top: 100px;"> <!-- Adjusted margin-top -->
+  <div class="container is-max-desktop" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
+    <h2 class="title is-3">SV-Comp Dataset</h2>
+    <img src="static/images/svcomp_dataset.jpeg" alt="Website" style="max-width: 80%; height: auto; margin-bottom: 30px;"> <!-- Increased margin-bottom -->
+    <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
+      We evaluate on <span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span>, the largest public verification benchmark, focusing on the termination category (2,328 <i> C </i> programs) spanning bit-precise arithmetic, complex control flow, heap manipulation, and real-world code.
+</p>
+  </div>
+</section>
+
+
+
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop"
+         style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
+      <img src="static/images/svcomp_scoring.jpeg"
+           alt="Website"
+           style="max-width: 80%; height: auto; margin-bottom: 30px;">
+      <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
+        We adopt <span style="font-variant: small-caps;">SV-Comp's</span> asymmetric scoring, treating non-termination (NT) as positive. Correct T predictions (TN) score +2; correct NT predictions score +1 with a valid witness and 0 otherwise. Errors are heavily penalized: −16 for false positives and −32 for false negatives. This reflects a safety-first priority, where misclassifying non-terminating programs as terminating is far more harmful than unnecessary conservatism.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
 
 <!-- Image Section for "Our Distillation Framework" -->
 <section class="image-section" style="margin-top: 100px;"> <!-- Adjusted margin-top -->
