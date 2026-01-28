@@ -18,15 +18,20 @@
 </head>
 <body>
  <!-- ====== HERO: Paper Title / Authors / Affiliations / Links ====== -->
-
 <style>
-  /* Overall hero spacing */
+  /* ===============================
+     HERO LAYOUT
+     =============================== */
+
   .paper-hero {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
   }
 
-  /* Title styling */
+  /* ===============================
+     TITLE
+     =============================== */
+
   .paper-hero .hero-title {
     max-width: 18em;
     margin: 0 auto 0.75rem auto;
@@ -34,14 +39,16 @@
     letter-spacing: -0.02em;
   }
 
-  /* Author container */
+  /* ===============================
+     AUTHORS
+     =============================== */
+
   .paper-hero .publication-authors {
     max-width: 52rem;
     margin-left: auto;
     margin-right: auto;
   }
 
-  /* Author blocks */
   .paper-hero .author-block {
     display: inline-block;
     margin: 0.18rem 0.38rem;
@@ -58,24 +65,47 @@
     border-bottom-color: currentColor;
   }
 
-  /* Affiliations styling */
+  /* ===============================
+     AFFILIATIONS + LOGOS
+     =============================== */
+
   .paper-hero .affiliations {
     font-size: 0.98rem;
-    opacity: 0.9;
+    opacity: 0.92;
     margin-top: 0.9rem;
   }
 
-  .paper-hero .affiliations div {
-    margin-top: 0.15rem;
+  /* Each affiliation line: logo + text */
+  .paper-hero .affiliation-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    margin-top: 0.35rem;
   }
 
-  .paper-hero .venue {
-    margin-top: 0.45rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
+  /* Logo size control (JPEG-safe) */
+  .paper-hero .affiliation-logo {
+    height: 20px;        /* 🔑 adjust: 18–22px */
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.9;
+    filter: grayscale(100%);
+    transition: filter 140ms ease, opacity 140ms ease;
   }
 
-  /* Publication links */
+  /* Subtle hover polish */
+  .paper-hero .affiliation-row:hover .affiliation-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  /* ===============================
+     PUBLICATION LINKS
+     =============================== */
+
   .paper-hero .publication-links {
     margin-top: 1.2rem;
     display: flex;
@@ -96,7 +126,10 @@
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
   }
 
-  /* Mobile tweaks */
+  /* ===============================
+     MOBILE TWEAKS
+     =============================== */
+
   @media (max-width: 768px) {
     .paper-hero {
       padding-top: 2rem;
@@ -110,8 +143,14 @@
     .paper-hero .author-block {
       margin: 0.12rem 0.28rem;
     }
+
+    .paper-hero .affiliation-logo {
+      height: 18px;
+      max-width: 90px;
+    }
   }
 </style>
+
 
 <section class="hero paper-hero">
   <div class="hero-body">
