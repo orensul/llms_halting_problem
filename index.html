@@ -378,7 +378,7 @@ and progress in large language models (LLMs)
 raises the following question: can LLMs reliably predict program termination? In this
 work, we evaluate LLMs on a diverse set of 𝐶
 programs from the Termination category of the
-International Competition on Software Verification (SV-Comp) 2025. Our results suggest
+International Competition on Software Verification (<span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span>) 2025. Our results suggest
 that LLMs perform remarkably well at predicting program termination, where GPT-5 and
 Claude Sonnet-4.5 would rank just behind the
 top-ranked tool (using test-time-scaling), and
@@ -468,7 +468,7 @@ for reasoning about undecidable problems.
 
 <section class="image-section" style="margin-top: 100px;"> <!-- Adjusted margin-top -->
   <div class="container is-max-desktop" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
-    <h2 class="title is-3">SV-Comp Dataset</h2>
+    <h2 class="title is-3"><span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span> Dataset</h2>
     <img src="static/images/svcomp_dataset.jpeg" alt="Website" style="max-width: 80%; height: auto; margin-bottom: 30px;"> <!-- Increased margin-bottom -->
     <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
       We evaluate on <span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span>, the largest public verification benchmark, focusing on the termination category (2,328 <i> C </i> programs) spanning bit-precise arithmetic, complex control flow, heap manipulation, and real-world code.
@@ -483,7 +483,7 @@ for reasoning about undecidable problems.
   <div class="hero-body">
     <div class="container is-max-desktop"
          style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
-          <h2 class="title is-3">SV-Comp Scoring</h2>
+          <h2 class="title is-3"><span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span> Scoring</h2>
       <img src="static/images/svcomp_scoring.jpeg"
            alt="Website"
            style="max-width: 80%; height: auto; margin-bottom: 30px;">
@@ -509,7 +509,7 @@ for reasoning about undecidable problems.
 <!-- Image Section for "Our Distillation Framework" -->
 <section class="image-section" style="margin-top: 100px;"> <!-- Adjusted margin-top -->
   <div class="container is-max-desktop" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
-    <h2 class="title is-3">SV-Comp main results</h2>
+    <h2 class="title is-3"><span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span> main results</h2>
     <img src="static/images/main_results.jpeg" alt="Website" style="max-width: 80%; height: auto; margin-bottom: 30px;"> <!-- Increased margin-bottom -->
     <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
   Mean <span style="font-variant: small-caps;">SV-Comp</span> scores for LLMs
@@ -541,13 +541,13 @@ for reasoning about undecidable problems.
       <div id="results-carousel" class="carousel results-carousel" style="display: flex; justify-content: center; align-items: center;">
 
         <div class="item" style="text-align: center;">
-          <h2 class="title is-4">SV-Comp F1 Scores</h2>
+          <h2 class="title is-4"><span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span> F1 Scores</h2>
           <img src="static/images/llm_f1_score.jpeg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
           <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
             LLMs F1 scores per class. F1 (T) and F1 (NT)
 are averaged over 100 bootstrap runs. F1 decreases under
 TTS due to increased unknown predictions (counted as
-errors in F1). Rankings align with SV-Comp score.
+errors in F1). Rankings align with <span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span> score.
           </p>
         </div>
 
@@ -574,7 +574,7 @@ unanimous agreement among 10 model predictions, resulting in an unknown. As we c
 Sonnet-4.5 rarely predict unknown, while GPT-4o does
 so most often. For TTS-Unk, GPT-5 and Claude show
 high prediction unanimity, whereas CWM, Qwen3-32B,
-and GPT-4o have more disagreement – improving SVComp scores but lowers F1 scores.
+and GPT-4o have more disagreement – improving <span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span> scores but lowers F1 scores.
           </p>
         </div>
 
@@ -582,10 +582,10 @@ and GPT-4o have more disagreement – improving SVComp scores but lowers F1 scor
           <h2 class="title is-4">Performance vs. Code Length</h2>
           <img src="static/images/code_length_bins.jpeg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
           <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
-            LLMs mean SV-Comp score vs. code
+            LLMs mean <span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span> score vs. code
 length. Dataset examples are grouped into three equal
 size bins by code length (measured in tokens using
-Instruct Llama3 Tokenizer) (x axis). The mean SVComp score (y axis) per bin is shown for all models
+Instruct Llama3 Tokenizer) (x axis). The mean <span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span> score (y axis) per bin is shown for all models
 (20 predictions per sample). Scores decrease with code
 length; GPT-5 leads, followed by Claude and CWM.
           </p>
