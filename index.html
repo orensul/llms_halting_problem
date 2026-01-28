@@ -17,60 +17,187 @@
   <script src="static/js/index.js"></script>
 </head>
 <body>
-  <!-- Hero section -->
- <section class="hero">
+ <!-- ====== HERO: Paper Title / Authors / Affiliations / Links ====== -->
+
+<style>
+  /* Overall hero spacing */
+  .paper-hero {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  /* Title styling */
+  .paper-hero .hero-title {
+    max-width: 18em;
+    margin: 0 auto 0.75rem auto;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  /* Author container */
+  .paper-hero .publication-authors {
+    max-width: 52rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Author blocks */
+  .paper-hero .author-block {
+    display: inline-block;
+    margin: 0.18rem 0.38rem;
+    white-space: nowrap;
+  }
+
+  .paper-hero .author-block a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+  }
+
+  .paper-hero .author-block a:hover {
+    border-bottom-color: currentColor;
+  }
+
+  /* Affiliations styling */
+  .paper-hero .affiliations {
+    font-size: 0.98rem;
+    opacity: 0.9;
+    margin-top: 0.9rem;
+  }
+
+  .paper-hero .affiliations div {
+    margin-top: 0.15rem;
+  }
+
+  .paper-hero .venue {
+    margin-top: 0.45rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  /* Publication links */
+  .paper-hero .publication-links {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
+  .paper-hero .publication-links .button {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14);
+    transition: transform 140ms ease, box-shadow 140ms ease;
+  }
+
+  .paper-hero .publication-links .button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Mobile tweaks */
+  @media (max-width: 768px) {
+    .paper-hero {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .paper-hero .hero-title {
+      max-width: 22em;
+    }
+
+    .paper-hero .author-block {
+      margin: 0.12rem 0.28rem;
+    }
+  }
+</style>
+
+<section class="hero paper-hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            LLMs versus the Halting Problem: Revisiting Program Termination Prediction
+
+          <h1 class="title is-1 publication-title hero-title">
+            LLMs versus the Halting Problem:<br>
+            Revisiting Program Termination Prediction
           </h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://www.orensultan.com/" target="_blank">Oren Sultan<sup>1, 2</sup></a>,</span>
-            <span class="author-block">
-              <a href="https://jordiae.com/" target="_blank">Jordi Armengol-Estapé<sup>1</sup></a>,</span>
-
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/pascal-kesseli-99561b84/" target="_blank">Pascal Kesseli<sup>1</sup></a>,</span>
-
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/julienvanegue/" target="_blank">Julien Vanegue<sup>3</sup></a>,</span>
-
-            <span class="author-block">
-              <a href="http://www.hyadatalab.com/" target="_blank">Dafna Shahaf<sup>2</sup>,</a></span>
-
-            <span class="author-block">
-              <a href="https://www.cs.huji.ac.il/~adiyoss/" target="_blank">Yossi Adi<sup>1</sup>,</a></span>
-
-              <span class="author-block">
-              <a href="http://www0.cs.ucl.ac.uk/staff/p.ohearn/" target="_blank">Peter O'Hearn<sup>1</sup></a></span>
-
-
-          </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <b>(1) FAIR Team, Meta AI; (2) The Hebrew University of Jerusalem; (3) Bloomberg Research</b><br>
+              <a href="https://www.orensultan.com/" target="_blank" rel="noopener noreferrer">
+                Oren Sultan<sup>1, 2</sup>
+              </a>,
             </span>
-            <br>
+
             <span class="author-block">
-              <b>ArXiv</b>
+              <a href="https://jordiae.com/" target="_blank" rel="noopener noreferrer">
+                Jordi Armengol-Estapé<sup>1</sup>
+              </a>,
+            </span>
+
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/pascal-kesseli-99561b84/" target="_blank" rel="noopener noreferrer">
+                Pascal Kesseli<sup>1</sup>
+              </a>,
+            </span>
+
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/julienvanegue/" target="_blank" rel="noopener noreferrer">
+                Julien Vanegue<sup>3</sup>
+              </a>,
+            </span>
+
+            <span class="author-block">
+              <a href="http://www.hyadatalab.com/" target="_blank" rel="noopener noreferrer">
+                Dafna Shahaf<sup>2</sup>
+              </a>,
+            </span>
+
+            <span class="author-block">
+              <a href="https://www.cs.huji.ac.il/~adiyoss/" target="_blank" rel="noopener noreferrer">
+                Yossi Adi<sup>1</sup>
+              </a>,
+            </span>
+
+            <span class="author-block">
+              <a href="http://www0.cs.ucl.ac.uk/staff/p.ohearn/" target="_blank" rel="noopener noreferrer">
+                Peter O'Hearn<sup>1</sup>
+              </a>
             </span>
           </div>
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2601.18987" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+          <div class="is-size-5 publication-authors affiliations">
+            <div>(1) FAIR Team, Meta AI</div>
+            <div>(2) The Hebrew University of Jerusalem</div>
+            <div>(3) Bloomberg Research</div>
+
+            <div class="venue">arXiv</div>
+          </div>
+
+          <div class="publication-links">
+            <span class="link-block">
+              <a
+                href="https://arxiv.org/pdf/2601.18987"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="external-link button is-normal is-rounded is-dark"
+              >
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!--               <span class="link-block">
                 <a href="https://github.com/orensultan/AIRecolor" target="_blank"
