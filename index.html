@@ -74,22 +74,25 @@
     margin-top: 0.9rem;
   }
 
-  /* Center the row, but keep a stable "text ... logo" layout */
+  /* Each affiliation line is centered as a unit */
   .paper-hero .affiliation-row {
-    display: inline-flex;          /* shrink to content width */
-    align-items: center;
-    gap: 0.8rem;
+    display: flex;
+    justify-content: center;
     margin-top: 0.45rem;
   }
 
-  /* Put the whole row on its own line and centered */
-  .paper-hero .affiliations .affiliation-row {
-    justify-content: center;
+  /* Inner content shrinks to fit, keeps "text ... logo" stable */
+  .paper-hero .affiliation-row > span,
+  .paper-hero .affiliation-row > img {
+    display: inline-block;
   }
 
-  /* Logo: a bit bigger, but controlled */
+  .paper-hero .affiliation-row span {
+    margin-right: 0.8rem;
+  }
+
   .paper-hero .affiliation-logo {
-    height: 28px;                  /* slightly bigger than 26px */
+    height: 28px;
     width: auto;
     max-width: 120px;
     object-fit: contain;
@@ -146,6 +149,22 @@
   }
 
   /* ===============================
+     SECTION DIVIDER (between big sections)
+     =============================== */
+
+  .section-divider {
+    margin: 5rem auto;
+    max-width: 60%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(0, 0, 0, 0.25),
+      transparent
+    );
+  }
+
+  /* ===============================
      MOBILE TWEAKS
      =============================== */
 
@@ -171,8 +190,14 @@
     .paper-hero .hero-teaser img {
       max-width: 95%;
     }
+
+    .section-divider {
+      max-width: 80%;
+      margin: 3.5rem auto;
+    }
   }
 </style>
+
 
 
 
@@ -372,7 +397,7 @@ for reasoning about undecidable problems.
   <!-- End paper abstract -->
 
 
-
+# Section 1 video of the task
 
   <!-- Teaser video -->
   <section class="hero teaser" style="margin-top: 50px;">
@@ -402,7 +427,9 @@ for reasoning about undecidable problems.
   <!-- End teaser video -->
 
 
+<div class="section-divider"></div>
 
+# Section 2 LLM witness prediction
 
 <!-- Image Section for "Our Task" -->
 <section class="image-section" style="margin-top: 100px;">
@@ -417,8 +444,7 @@ for reasoning about undecidable problems.
 
   The predicted JSON is converted to <span style="font-variant: small-caps;">GraphML</span>
   and validated using a witness validator (e.g.,
-  <span style="font-variant: small-caps;">UAutomizer</span>).<br>
-
+  <span style="font-variant: small-caps;">UAutomizer</span>).
   The example illustrates a loop in which the variable
   <i>i</i> is initialized in the range
   [−5, 5], eventually reaches 0 (as specified by the assumption on edge E2),
