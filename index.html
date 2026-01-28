@@ -534,19 +534,14 @@ for reasoning about undecidable problems.
 </section>
 
 
-
 <!-- Image carousel -->
 <section class="hero is-small" style="margin-top: 150px;">
   <div class="hero-body" style="display: flex; justify-content: center; align-items: center;">
     <div class="container">
-
-      <!-- Carousel headline -->
-      <h2 class="title is-3 has-text-centered" style="margin-bottom: 40px;">
-        SV-Comp main results
-      </h2>
-
       <div id="results-carousel" class="carousel results-carousel" style="display: flex; justify-content: center; align-items: center;">
+
         <div class="item" style="text-align: center;">
+          <h2 class="title is-4">SV-Comp F1 Scores</h2>
           <img src="static/images/llm_f1_score.jpeg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
           <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
             LLMs F1 scores per class. F1 (T) and F1 (NT)
@@ -557,6 +552,7 @@ errors in F1). Rankings align with SV-Comp score.
         </div>
 
         <div class="item" style="text-align: center;">
+          <h2 class="title is-4">Witness Prediction Accuracy</h2>
           <img src="static/images/llm_witness_prediction.jpeg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
           <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
             LLMs witness prediction (validated by UAutomizer) success rates. Metrics: P (Precision): (%)
@@ -569,6 +565,7 @@ highlighting the challenge of generating a valid witness.
         </div>
 
         <div class="item" style="text-align: center;">
+          <h2 class="title is-4">Unknown Prediction Rates</h2>
           <img src="static/images/llm_unk_prediction.jpeg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
           <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
              LLMs unknown prediction distribution. Unk:
@@ -582,6 +579,7 @@ and GPT-4o have more disagreement – improving SVComp scores but lowers F1 scor
         </div>
 
         <div class="item" style="text-align: center;">
+          <h2 class="title is-4">Performance vs. Code Length</h2>
           <img src="static/images/code_length_bins.jpeg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
           <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
             LLMs mean SV-Comp score vs. code
@@ -592,11 +590,13 @@ Instruct Llama3 Tokenizer) (x axis). The mean SVComp score (y axis) per bin is s
 length; GPT-5 leads, followed by Claude and CWM.
           </p>
         </div>
+
       </div>
     </div>
   </div>
 </section>
 <!-- End image carousel -->
+
 
 
 
