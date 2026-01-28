@@ -169,12 +169,21 @@
           </div>
 
           <div class="is-size-5 publication-authors affiliations">
-            <div>(1) FAIR Team, Meta AI</div>
-            <div>(2) The Hebrew University of Jerusalem</div>
-            <div>(3) Bloomberg Research</div>
 
-            <div class="venue">arXiv</div>
-          </div>
+  <div class="affiliation-text">
+    (1) FAIR Team, Meta AI<br>
+    (2) The Hebrew University of Jerusalem<br>
+    (3) Bloomberg Research
+  </div>
+
+  <div class="affiliation-logos">
+    <img src="static/images/meta.jpeg" alt="Meta AI logo">
+    <img src="static/images/huji.jpeg" alt="Hebrew University logo">
+    <img src="static/images/bloomberg.jpeg" alt="Bloomberg logo">
+  </div>
+
+</div>
+
 
           <div class="publication-links">
             <span class="link-block">
@@ -268,17 +277,9 @@
   <b>Termination prediction task.</b><br>
   Given a program, the task is to predict whether the program halts for all inputs
   (instantiations of nondeterministic variables).<br><br>
-
   <b>(1)</b>
   Traditional verification tools such as <span style="font-variant: small-caps;">PROTON</span>
   rely on multi-component architectures for parsing, input augmentation, and tool-chain management
-  (architecture image reproduced from
-  <cite>Metta et&nbsp;al., 2024</cite>
-  under the
-  <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">
-    Attribution&nbsp;4.0 International License
-  </a>).<br><br>
-
   <b>(2)</b>
   We investigate whether large language models (LLMs) can match state-of-the-art verification tools,
   offering a simpler, language-agnostic solution, as illustrated in the example above where the LLM
