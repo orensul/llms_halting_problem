@@ -228,13 +228,13 @@
 
             <span class="author-block">
   <a href="https://www.cs.huji.ac.il/~adiyoss/" target="_blank" rel="noopener noreferrer">
-    Yossi Adi<sup>1†</sup>
+    Yossi Adi<sup>1*</sup>
   </a>,
 </span>
 
 <span class="author-block">
   <a href="http://www0.cs.ucl.ac.uk/staff/p.ohearn/" target="_blank" rel="noopener noreferrer">
-    Peter O'Hearn<sup>1†</sup>
+    Peter O'Hearn<sup>1*</sup>
   </a>
 </span>
 
@@ -274,7 +274,7 @@
             </div>
           </div>
         <div class="is-size-6 publication-notes">
-  <span>† Joint supervision</span>
+  <span>* Joint supervision</span>
 </div>
 
           <div class="publication-links">
@@ -445,7 +445,7 @@ for reasoning about undecidable problems.
 
       <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
         Given a <i>C</i> program, an LLM that predicts <i>nontermination</i> must additionally output
-        a witness automaton as a proof in JSON format (see Figure&nbsp;8 in the Appendix).
+        a witness automaton as a proof in JSON format.
         The witness automaton models a potentially infinite execution:
         nodes correspond to program states, and edges correspond to transitions.<br>
 
@@ -535,61 +535,69 @@ for reasoning about undecidable problems.
 
 
 
-
-
 <!-- Image carousel -->
-<!-- <section class="hero is-small" style="margin-top: 150px;">
+<section class="hero is-small" style="margin-top: 150px;">
   <div class="hero-body" style="display: flex; justify-content: center; align-items: center;">
     <div class="container">
+
+      <!-- Carousel headline -->
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: 40px;">
+        SV-Comp main results
+      </h2>
+
       <div id="results-carousel" class="carousel results-carousel" style="display: flex; justify-content: center; align-items: center;">
         <div class="item" style="text-align: center;">
-          <h2 class="title is-3">Experiments</h2>
-          <img src="static/images/exp1.jpg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
+          <img src="static/images/llm_f1_score.jpeg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
           <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
-            Offline evaluation results for our student models. Metrics include (tool-selection score, quality score, final score), and the average final score across the tools (Overall).
-            Results show that FlanT5-base performs very similarly to Llama-2-7b-chat-hf, with only a 0.02 gap (rows 1, 4).
-            Interestingly, both models perform better on a test subset with more popular user intents (r_5 > r_3 > All), where r_i denotes user intents with at least i calls.
-          </p>
-        </div>
-        <div class="item" style="text-align: center;">
-          <img src="static/images/reality_check.jpg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
-          <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
-            Output images for reality check. Here are examples of samples given to our annotators to evaluate.
-            For each sample, they were asked two binary questions:
-            (1) whether the image is relevant to the intent, and (2) whether the student models correctly mimic the teacher model (see Section 4.2).
-            Each sample includes the source image and the outputs of the teacher LLM along with the outputs from both of our student LLMs.
-            Based on the annotator’s majority vote: In the first sample: (1) All models produced results relevant to the intent “Morocco” (e.g., warm hues, typical of Moroccan landscapes, reflecting its deserts).
-            (2) Both student models successfully mimicked the teacher LLM.
-            In the second sample: (1) All models produced results relevant to the intent “The Matrix” (e.g., darkness, green tint, and cyberpunk aesthetic)
-            (2) Both student models did not mimic the teacher LLM well.
-          </p>
-        </div>
-        <div class="item" style="text-align: center;">
-          <img src="static/images/online_ab_test_exps.jpg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
-          <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
-             In addition to offline evaluation, we conducted two online A/B tests. <br>
-             First, we compared our teacher, GPT-3.5-Turbo (tested on 94,317 projects), with Llama-2-7b-chat-hf (93,495 projects).
-             We measured project completion rates as an indicator of user satisfaction.
-             The completion rate for the teacher was 96.1% of that of Llama-2-7b-chat-hf (no statistical significance). Thus, we conclude they are comparable.  <br>
-             In our second A/B test, we compared our student models. FlanT5-base (tested on 20,294 projects) achieved a completion rate of 99% of that of Llama-2-7b-chat-hf (20,282 projects).
-             Thus, we conclude they are comparable and choose FlanT5-base for its lower latency and cost. <br>
-             Importantly, we are encouraged by the fact that our offline metrics align with the results of the online A/B tests
+            LLMs F1 scores per class. F1 (T) and F1 (NT)
+are averaged over 100 bootstrap runs. F1 decreases under
+TTS due to increased unknown predictions (counted as
+errors in F1). Rankings align with SV-Comp score.
           </p>
         </div>
 
         <div class="item" style="text-align: center;">
-          <img src="static/images/exp2.jpg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
+          <img src="static/images/llm_witness_prediction.jpeg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
           <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
-            FlanT5-base’s performance in subsets of the train set, with and without augmentation.
-            We can see that augmentation is effective in limited data increasing the overall score by 0.13 for the 1/8 sample.
-            With larger training subsets, the proportion of augmentations (%) decreases, reducing overall improvement as expected.
+            LLMs witness prediction (validated by UAutomizer) success rates. Metrics: P (Precision): (%)
+of validated witness NT predictions out of all NT predictions; R (Recall): (%) of validated witness NT predictions out of all NT samples; V (Validity): (%) of
+validated witness NT predictions out of all correct NT
+predictions. GPT-5 and Claude lead in prediction rates,
+while CWM, GPT-4o, and Qwen3-32B perform lower,
+highlighting the challenge of generating a valid witness.
+          </p>
+        </div>
+
+        <div class="item" style="text-align: center;">
+          <img src="static/images/llm_unk_prediction.jpeg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
+          <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
+             LLMs unknown prediction distribution. Unk:
+(%) of unknown predictions, aggregated over 20 generations per entry. TTS-Unk: (%) of cases without
+unanimous agreement among 10 model predictions, resulting in an unknown. As we can see, GPT-5 and Claude
+Sonnet-4.5 rarely predict unknown, while GPT-4o does
+so most often. For TTS-Unk, GPT-5 and Claude show
+high prediction unanimity, whereas CWM, Qwen3-32B,
+and GPT-4o have more disagreement – improving SVComp scores but lowers F1 scores.
+          </p>
+        </div>
+
+        <div class="item" style="text-align: center;">
+          <img src="static/images/code_length_bins.jpeg" style="max-width: 80%; height: auto; margin-bottom: 15px;">
+          <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
+            LLMs mean SV-Comp score vs. code
+length. Dataset examples are grouped into three equal
+size bins by code length (measured in tokens using
+Instruct Llama3 Tokenizer) (x axis). The mean SVComp score (y axis) per bin is shown for all models
+(20 predictions per sample). Scores decrease with code
+length; GPT-5 leads, followed by Claude and CWM.
           </p>
         </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
 <!-- End image carousel -->
+
 
 
 <!--  &lt;!&ndash; Youtube video &ndash;&gt;-->
