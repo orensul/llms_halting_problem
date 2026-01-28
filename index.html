@@ -149,20 +149,15 @@
   }
 
   /* ===============================
-     SECTION DIVIDER (between big sections)
-     =============================== */
+   BLACK SECTION DIVIDER
+   =============================== */
 
-  .section-divider {
-    margin: 5rem auto;
-    max-width: 60%;
-    height: 1px;
-    background: linear-gradient(
-      to right,
-      transparent,
-      rgba(0, 0, 0, 0.25),
-      transparent
-    );
-  }
+  .section-divider-black {
+  border: none;
+  border-top: 1.5px solid #000;   /* solid black line */
+  width: 60%;
+  margin: 4.5rem auto;
+}
 
   /* ===============================
      MOBILE TWEAKS
@@ -191,10 +186,6 @@
       max-width: 95%;
     }
 
-    .section-divider {
-      max-width: 80%;
-      margin: 3.5rem auto;
-    }
   }
 </style>
 
@@ -397,7 +388,7 @@ for reasoning about undecidable problems.
   <!-- End paper abstract -->
 
 
-# Section 1 video of the task
+
 
   <!-- Teaser video -->
   <section class="hero teaser" style="margin-top: 50px;">
@@ -427,9 +418,10 @@ for reasoning about undecidable problems.
   <!-- End teaser video -->
 
 
-<div class="section-divider"></div>
+<hr class="section-divider-black">
 
-# Section 2 LLM witness prediction
+
+
 
 <!-- Image Section for "Our Task" -->
 <section class="image-section" style="margin-top: 100px;">
