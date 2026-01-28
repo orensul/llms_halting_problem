@@ -484,13 +484,14 @@ for reasoning about undecidable problems.
            style="max-width: 80%; height: auto; margin-bottom: 30px;">
       <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
   We adopt <span style="font-variant: small-caps;">SV-Comp's</span> asymmetric scoring, treating non-termination (NT) as the positive class.
-  Correct termination predictions (<strong>true negatives, TN</strong>) receive +2 points.
-  Correct non-termination predictions receive +1 point when accompanied by a valid witness (<strong>TP<sub>valid&nbsp;witness</sub></strong>),
-  and 0 points when the witness is invalid (<strong>TP<sub>invalid&nbsp;witness</sub></strong>) or the prediction is marked as <strong>unknown</strong>.
-  Incorrect non-termination predictions (<strong>false positives, FP</strong>) are penalized with −16 points,
-  while incorrect termination predictions (<strong>false negatives, FN</strong>) incur a −32 point penalty.
+  Correct termination predictions (true negatives, TN) receive +2 points.
+  Correct non-termination predictions receive +1 point when accompanied by a valid witness (TP<sub>valid&nbsp;witness</sub>),
+  and 0 points when the witness is invalid (TP<sub>invalid&nbsp;witness</sub>) or the prediction is marked as unknown.
+  Incorrect non-termination predictions (false positives, FP) are penalized with −16 points,
+  while incorrect termination predictions (false negatives, FN) incur a −32 point penalty.
   This asymmetric scheme reflects a safety-first priority: misclassifying a non-terminating program as terminating is far more harmful than unnecessary conservatism.
 </p>
+
 
     </div>
   </div>
