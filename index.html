@@ -60,9 +60,9 @@
     padding-bottom: 1px;
   }
 
-  .paper-hero .author-block a:hover {
-    border-bottom-color: currentColor;
-  }
+  /*.paper-hero .author-block a:hover {*/
+  /*  border-bottom-color: currentColor;*/
+  /*}*/
 
   /* ===============================
      AFFILIATIONS + LOGOS (logo at END)
@@ -92,15 +92,15 @@
   }
 
   .paper-hero .affiliation-logo {
-    height: 28px;
-    width: auto;
-    max-width: 120px;
-    object-fit: contain;
-    display: block;
-    opacity: 0.92;
-    filter: grayscale(100%);
-    transition: filter 140ms ease, opacity 140ms ease;
-  }
+  height: 28px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  display: block;
+  opacity: 0.9;
+  filter: grayscale(100%);   /* always grayscale */
+}
+
 
   .paper-hero .affiliation-row:hover .affiliation-logo {
     filter: grayscale(0%);
@@ -240,17 +240,34 @@
 
           <div class="is-size-5 publication-authors affiliations">
             <div class="affiliation-row">
-              <span>(1) FAIR Team, Meta AI</span>
+              <span>
+  <a href="https://ai.meta.com/research/" target="_blank" rel="noopener noreferrer">
+    (1) FAIR Team, Meta AI
+  </a>
+</span>
+
               <img class="affiliation-logo" src="static/images/meta.jpeg" alt="Meta AI logo">
             </div>
 
             <div class="affiliation-row">
-              <span>(2) The Hebrew University of Jerusalem</span>
+              <span>
+  <a href="https://en.huji.ac.il/" target="_blank" rel="noopener noreferrer">
+    (2) The Hebrew University of Jerusalem
+  </a>
+</span>
+
               <img class="affiliation-logo" src="static/images/huji.jpeg" alt="Hebrew University logo">
             </div>
 
             <div class="affiliation-row">
-              <span>(3) Bloomberg Research</span>
+              <span>
+  <a href="https://www.bloomberg.com/company/what-we-do/engineering-cto/"
+     target="_blank"
+     rel="noopener noreferrer">
+    (3) Bloomberg Research
+  </a>
+</span>
+
               <img class="affiliation-logo" src="static/images/bloomberg.jpeg" alt="Bloomberg logo">
             </div>
           </div>
@@ -411,27 +428,34 @@ for reasoning about undecidable problems.
 
 
 
-
 <!-- Image Section for "Our Task" -->
-<section class="section is-light image-section">
-  <div class="container is-max-desktop" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
-    <img src="static/images/witness_example.jpeg" alt="Website" style="max-width: 80%; height: auto; margin-bottom: 30px;"> <!-- Increased margin-bottom -->
-<p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
-    <b>LLM non-termination witness prediction.</b><br>
-  Given a <i>C</i> program, an LLM that predicts <i>nontermination</i> must additionally output
-  a <b>witness automaton</b> as a proof in JSON format (see Figure&nbsp;8 in the Appendix).
-  The witness automaton models a potentially infinite execution:
-  nodes correspond to program states, and edges correspond to transitions.<br>
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop"
+         style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
 
-  The predicted JSON is converted to <span style="font-variant: small-caps;">GraphML</span>
-  and validated using a witness validator (e.g.,
-  <span style="font-variant: small-caps;">UAutomizer</span>).
-  The example illustrates a loop in which the variable
-  <i>i</i> is initialized in the range
-  [−5, 5], eventually reaches 0 (as specified by the assumption on edge E2),
-  and then executes indefinitely.
-</p>
+      <img src="static/images/witness_example.jpeg"
+           alt="Website"
+           style="max-width: 80%; height: auto; margin-bottom: 30px;">
 
+      <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
+        <b>LLM non-termination witness prediction.</b><br>
+        Given a <i>C</i> program, an LLM that predicts <i>nontermination</i> must additionally output
+        a <b>witness automaton</b> as a proof in JSON format (see Figure&nbsp;8 in the Appendix).
+        The witness automaton models a potentially infinite execution:
+        nodes correspond to program states, and edges correspond to transitions.<br>
+
+        The predicted JSON is converted to
+        <span style="font-variant: small-caps;">GraphML</span>
+        and validated using a witness validator (e.g.,
+        <span style="font-variant: small-caps;">UAutomizer</span>).
+        The example illustrates a loop in which the variable
+        <i>i</i> is initialized in the range
+        [−5, 5], eventually reaches 0 (as specified by the assumption on edge E2),
+        and then executes indefinitely.
+      </p>
+
+    </div>
   </div>
 </section>
 
