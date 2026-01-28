@@ -506,7 +506,6 @@ for reasoning about undecidable problems.
 
 
 
-<!-- Image Section for "Our Distillation Framework" -->
 <section class="image-section" style="margin-top: 100px;"> <!-- Adjusted margin-top -->
   <div class="container is-max-desktop" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
     <h2 class="title is-3"><span style="font-variant: small-caps;">SV-Comp&nbsp;2025</span> main results</h2>
@@ -597,6 +596,20 @@ length; GPT-5 leads, followed by Claude and CWM.
 </section>
 <!-- End image carousel -->
 
+
+
+<section class="image-section" style="margin-top: 100px;"> <!-- Adjusted margin-top -->
+  <div class="container is-max-desktop" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
+    <h2 class="title is-3">Precondition Prediction</h2>
+    <img src="static/images/precondition_prediction.jpeg" alt="Website" style="max-width: 80%; height: auto; margin-bottom: 30px;"> <!-- Increased margin-bottom -->
+ <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
+  To obtain an interpretable alternative to the complex <span style="font-variant: small-caps;">SV-Comp</span> witness format, models are prompted to output a logical expression over non-deterministic variables characterizing conditions for non-termination (e.g., <i>x</i> &lt; 0 ∧ <i>y</i> = 0).
+  We focus on relatively short programs with at most two non-deterministic variables to enable reliable human annotation, and use the Z3 theorem prover to verify logical equivalence between predicted and ground-truth expressions.
+  On these short <span style="font-variant: small-caps;">SV-Comp</span> non-termination samples, all models achieve high Pass@1 and Pass@3 accuracy, with consistently stronger performance on the Domain witness format.
+</p>
+
+  </div>
+</section>
 
 
 
