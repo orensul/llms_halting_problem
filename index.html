@@ -234,17 +234,17 @@
 
           <div class="is-size-5 publication-authors affiliations">
             <div class="affiliation-row">
-              <span><b>(1) FAIR Team, Meta AI</b></span>
+              <span>(1) FAIR Team, Meta AI</span>
               <img class="affiliation-logo" src="static/images/meta.jpeg" alt="Meta AI logo">
             </div>
 
             <div class="affiliation-row">
-              <span><b>(2) The Hebrew University of Jerusalem</b></span>
+              <span>(2) The Hebrew University of Jerusalem</span>
               <img class="affiliation-logo" src="static/images/huji.jpeg" alt="Hebrew University logo">
             </div>
 
             <div class="affiliation-row">
-              <span><b>(3) Bloomberg Research</b></span>
+              <span>(3) Bloomberg Research</span>
               <img class="affiliation-logo" src="static/images/bloomberg.jpeg" alt="Bloomberg logo">
             </div>
           </div>
@@ -407,21 +407,21 @@ for reasoning about undecidable problems.
 <!-- Image Section for "Our Task" -->
 <section class="image-section" style="margin-top: 100px;">
   <div class="container is-max-desktop" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
-    <h2 class="title is-3">LLM non-termination witness prediction</h2>
-    <img src="static/images/witness_prediction.jpeg" alt="Website" style="max-width: 80%; height: auto; margin-bottom: 30px;"> <!-- Increased margin-bottom -->
+    <img src="static/images/witness_example.jpeg" alt="Website" style="max-width: 80%; height: auto; margin-bottom: 30px;"> <!-- Increased margin-bottom -->
 <p class="subtitle" style="text-align: left; max-width: 80%; margin: 20px auto 0;">
+    <b>LLM non-termination witness prediction.</b><br>
   Given a <i>C</i> program, an LLM that predicts <i>nontermination</i> must additionally output
   a <b>witness automaton</b> as a proof in JSON format (see Figure&nbsp;8 in the Appendix).
   The witness automaton models a potentially infinite execution:
-  nodes correspond to program states, and edges correspond to transitions.<br><br>
+  nodes correspond to program states, and edges correspond to transitions.<br>
 
   The predicted JSON is converted to <span style="font-variant: small-caps;">GraphML</span>
   and validated using a witness validator (e.g.,
-  <span style="font-variant: small-caps;">UAutomizer</span>).<br><br>
+  <span style="font-variant: small-caps;">UAutomizer</span>).<br>
 
   The example illustrates a loop in which the variable
   <i>i</i> is initialized in the range
-  [−5, 5], eventually reaches 0 (as specified by the assumption on edge <b>E2</b>),
+  [−5, 5], eventually reaches 0 (as specified by the assumption on edge E2),
   and then executes indefinitely.
 </p>
 
